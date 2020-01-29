@@ -16,7 +16,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
 //store the current balance of agent/player
-bal = WebUI.getText(findTestObject('Agent List/my_balance'))
+bal = WebUI.getText(findTestObject('Agent List/Action Buttons/Manage Balance/my_balance'))
 
 //convert stored balance to float
 float f_bal = Float.parseFloat(bal)
@@ -45,7 +45,7 @@ WebUI.click(findTestObject(null))
 expected_afterCredit_bal = (f_bal + 1000.00)
 
 //store the new balance of agent/player
-afterCredit_bal = WebUI.getText(findTestObject('Agent List/my_balance'))
+afterCredit_bal = WebUI.getText(findTestObject('Agent List/Action Buttons/Manage Balance/my_balance'))
 
 //convert to float the stored string
 float f_afterCredit_bal = Float.parseFloat(afterCredit_bal)
@@ -82,7 +82,7 @@ WebUI.click(findTestObject(null))
 WebUI.click(findTestObject(null))
 
 //store current balance after debit
-afterDebit_bal = WebUI.getText(findTestObject('Agent List/my_balance'))
+afterDebit_bal = WebUI.getText(findTestObject('Agent List/Action Buttons/Manage Balance/my_balance'))
 
 //subtract the amount deducted from new balance
 expected_afterDebit_bal = (f_afterCredit_bal - 1000.00)
